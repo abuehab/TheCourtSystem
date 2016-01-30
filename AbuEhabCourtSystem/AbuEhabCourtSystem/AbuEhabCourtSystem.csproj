@@ -65,6 +65,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Db.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Employees Forms\FrmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees Forms\FrmAddEmployee.Designer.cs">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees Forms\FrmEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees Forms\FrmEditEmployee.Designer.cs">
+      <DependentUpon>FrmEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees Forms\FrmEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees Forms\FrmEmployees.Designer.cs">
+      <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees Forms\FrmViewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees Forms\FrmViewEmployee.Designer.cs">
+      <DependentUpon>FrmViewEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Expenses Forms\FrmExpenses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,11 +142,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CourtLocalData.mdf</DependentUpon>
     </Content>
+    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Accounts Forms\" />
     <Folder Include="Forms\Clients Forrms\" />
-    <Folder Include="Forms\Employees Forms\" />
     <Folder Include="Forms\Issues Forms\" />
     <Folder Include="Forms\Lowyers Forms\" />
     <Folder Include="Forms\Opponents Forms\" />
