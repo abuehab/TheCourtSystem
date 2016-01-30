@@ -47,9 +47,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,8 +104,23 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper Classes\_Informations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\FrmViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FrmViewer.Designer.cs">
+      <DependentUpon>FrmViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports Tables Functions\Employee_Reports_Functions.cs" />
+    <Compile Include="Reports\Reports Tables Functions\Lowyer_Reports_Functions.cs" />
+    <Compile Include="Reports\Reports Tables Items\Employee_Table_Items.cs" />
+    <Compile Include="Reports\Reports Tables Items\Lowyer_Table_Items.cs" />
+    <Compile Include="Reports\ReportsDisplyer.cs" />
+    <EmbeddedResource Include="Reports\FrmViewer.resx">
+      <DependentUpon>FrmViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Db.dbml.layout">
       <DependentUpon>Db.dbml</DependentUpon>
@@ -142,7 +160,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CourtLocalData.mdf</DependentUpon>
     </Content>
-    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Accounts Forms\" />
@@ -150,9 +167,6 @@
     <Folder Include="Forms\Issues Forms\" />
     <Folder Include="Forms\Lowyers Forms\" />
     <Folder Include="Forms\Opponents Forms\" />
-    <Folder Include="Helper Classes\" />
-    <Folder Include="Reports\Reports Tables Functions\" />
-    <Folder Include="Reports\Reports Tables Items\" />
     <Folder Include="Reports\Sheets\" />
     <Folder Include="Tables Classes\" />
   </ItemGroup>
