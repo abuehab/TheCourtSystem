@@ -65,6 +65,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Db.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Expenses Forms\FrmExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Expenses Forms\FrmExpenses.Designer.cs">
+      <DependentUpon>FrmExpenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="app.config" />
     <None Include="Db.dbml.layout">
       <DependentUpon>Db.dbml</DependentUpon>
     </None>
@@ -116,7 +123,6 @@
     <Folder Include="Forms\Accounts Forms\" />
     <Folder Include="Forms\Clients Forrms\" />
     <Folder Include="Forms\Employees Forms\" />
-    <Folder Include="Forms\Expenses Forms\" />
     <Folder Include="Forms\Issues Forms\" />
     <Folder Include="Forms\Lowyers Forms\" />
     <Folder Include="Forms\Opponents Forms\" />
