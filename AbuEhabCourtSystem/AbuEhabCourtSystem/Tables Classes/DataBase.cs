@@ -5,7 +5,8 @@ using System.Text;
 
 namespace AbuEhabCourtSystem.Tables_Classes
 {
-    class DataBase
+    public  abstract class DataBase
     {
+        public static DbDataContext DbContext = new DbDataContext();
     }
 }

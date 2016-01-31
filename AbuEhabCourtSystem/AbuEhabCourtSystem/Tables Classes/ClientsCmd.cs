@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AbuEhabCourtSystem.Tables_Classes
 {
-    class ClientsCmd
+    public class ClientsCmd:DataBase
     {
     }
 }
