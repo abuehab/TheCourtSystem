@@ -118,10 +118,18 @@
     <Compile Include="Reports\Reports Tables Items\Employee_Table_Items.cs" />
     <Compile Include="Reports\Reports Tables Items\Lowyer_Table_Items.cs" />
     <Compile Include="Reports\ReportsDisplyer.cs" />
-    <Compile Include="Tables Classes\ClientsCmd.cs" />
-    <Compile Include="Tables Classes\DataBase.cs" />
-    <Compile Include="Tables Classes\EmployeeCmd.cs" />
-    <Compile Include="Tables Classes\LawyerCmd.cs" />
+    <EmbeddedResource Include="Forms\Employees Forms\FrmAddEmployee.resx">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees Forms\FrmEditEmployee.resx">
+      <DependentUpon>FrmEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees Forms\FrmEmployees.resx">
+      <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees Forms\FrmViewEmployee.resx">
+      <DependentUpon>FrmViewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\FrmViewer.resx">
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +180,7 @@
     <Folder Include="Forms\Lowyers Forms\" />
     <Folder Include="Forms\Opponents Forms\" />
     <Folder Include="Reports\Sheets\" />
+    <Folder Include="Tables Classes\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
