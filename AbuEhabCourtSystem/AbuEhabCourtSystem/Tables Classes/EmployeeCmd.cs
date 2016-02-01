@@ -57,7 +57,13 @@ namespace AbuEhabCourtSystem.Tables_Classes
                 return null;
             }
         }
+       
 
+        /// <summary>
+        /// Get  One Employee By hIS  Name Use  this method check if existed or not 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public List<Employee> ListEmplyee_ByName(string name)
         {
             try

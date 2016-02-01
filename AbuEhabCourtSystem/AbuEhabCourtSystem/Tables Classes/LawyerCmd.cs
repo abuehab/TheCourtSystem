@@ -9,6 +9,13 @@ namespace AbuEhabCourtSystem.Tables_Classes
 {
     public class LawyerCmd : DataBase
     {
+
+
+        /// <summary>
+        ///  This Method Saved New Lowyer 
+        /// </summary>
+        /// <param name="law"> "أيمن شوف كيف ممكن الكومنت يساعد في حالة التيم وورك"Insert Lowyer Object Table </param>
+        /// <returns>return Boolean Value </returns>
         public bool NewLawyer(Lowyer law)
         {
             DbContext = new DbDataContext();
@@ -17,6 +24,15 @@ namespace AbuEhabCourtSystem.Tables_Classes
 
             return true;
         }
+
+
+
+        /// <summary>
+        /// This Method for edit lowyer Data
+        /// </summary>
+        /// <param name="law"> Insert Lowyer Object Name As Table </param>
+        /// <param name="lawId"> Lowyer Id </param>
+        /// <returns> Return True Value if Proccess is Successeded</returns>
 
         public bool EditLawyer(Lowyer law, int lawId)
         {

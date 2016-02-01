@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AbuEhab">
+      <HintPath>..\..\..\AbuEhab.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -98,6 +101,12 @@
     <Compile Include="Forms\Expenses Forms\FrmExpenses.Designer.cs">
       <DependentUpon>FrmExpenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmAddLowyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmAddLowyer.Designer.cs">
+      <DependentUpon>FrmAddLowyer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +131,12 @@
     <Compile Include="Tables Classes\DataBase.cs" />
     <Compile Include="Tables Classes\EmployeeCmd.cs" />
     <Compile Include="Tables Classes\LawyerCmd.cs" />
+    <EmbeddedResource Include="Forms\Employees Forms\FrmAddEmployee.resx">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lowyers Forms\FrmAddLowyer.resx">
+      <DependentUpon>FrmAddLowyer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\FrmViewer.resx">
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,7 +184,6 @@
     <Folder Include="Forms\Accounts Forms\" />
     <Folder Include="Forms\Clients Forrms\" />
     <Folder Include="Forms\Issues Forms\" />
-    <Folder Include="Forms\Lowyers Forms\" />
     <Folder Include="Forms\Opponents Forms\" />
     <Folder Include="Reports\Sheets\" />
   </ItemGroup>
