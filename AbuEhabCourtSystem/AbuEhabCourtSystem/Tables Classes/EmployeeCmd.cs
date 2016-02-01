@@ -22,17 +22,17 @@ namespace AbuEhabCourtSystem.Tables_Classes
             emp.Id = xid;
             var q = CompiledQuery.Compile((DbDataContext db, int i) =>
                                              db.Employees.Single(d => d.Id == i));
-            var employee = q(DbContext, xid);
-            employee.Id = emp.Id;
-            employee.EmployeeName = emp.EmployeeName;
-            employee.Address = emp.Address;
-            employee.IdCard = emp.IdCard;
-            employee.Phone = emp.Phone;
-            employee.Email = emp.Email;
-            employee.Mobile = emp.Mobile;
-            employee.Salary = emp.Salary;
-            employee.Status = emp.Status;
-            employee.AccountId = emp.AccountId;
+            var newEmp = q(DbContext, xid);
+            newEmp.Id = emp.Id;
+            newEmp.EmployeeName = emp.EmployeeName;
+            newEmp.Address = emp.Address;
+            newEmp.IdCard = emp.IdCard;
+            newEmp.Phone = emp.Phone;
+            newEmp.Email = emp.Email;
+            newEmp.Mobile = emp.Mobile;
+            newEmp.Salary = emp.Salary;
+            newEmp.Status = emp.Status;
+            newEmp.AccountId = emp.AccountId;
             DbContext.SubmitChanges();
 
             return true;
@@ -51,7 +51,6 @@ namespace AbuEhabCourtSystem.Tables_Classes
             }
             catch (Exception)
             {
-
                 return null;
             }
         }
@@ -61,8 +60,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             try
             {
                 var q = CompiledQuery.Compile((DbDataContext db, string n) =>
-                                                                db.Employees.Where(c => c.EmployeeName.Contains(n)
-                                                             ));
+                         db.Employees.Where(c => c.EmployeeName.Contains(n)));
                 var employees = q(DbContext, name).ToList();
 
                 return employees;
@@ -86,7 +84,6 @@ namespace AbuEhabCourtSystem.Tables_Classes
             }
             catch (Exception)
             {
-
                 return null;
             }
         }
@@ -95,7 +92,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             try
             {
                 var q = CompiledQuery.Compile((DbDataContext db, int i) =>
-                                                              db.Employees.Where(c => c.Id == i));
+                       db.Employees.Where(c => c.Id == i));
                 var employee = q(DbContext, employeeid).Single();
                 return employee;
             }
@@ -109,7 +106,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
         {
             emp.Id = xid;
             var q = CompiledQuery.Compile((DbDataContext db, int i) =>
-                                                          db.Employees.Single(d => d.Id == i));
+                     db.Employees.Single(d => d.Id == i));
             var employee = q(DbContext, xid);
             DbContext.Employees.DeleteOnSubmit(employee);
             DbContext.SubmitChanges();
