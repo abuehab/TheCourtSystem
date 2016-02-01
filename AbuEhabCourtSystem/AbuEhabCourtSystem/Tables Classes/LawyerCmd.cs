@@ -2,39 +2,112 @@
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 
 namespace AbuEhabCourtSystem.Tables_Classes
 {
-   public  class LawyerCmd:DataBase
+    public class LawyerCmd : DataBase
     {
-       public bool NewLawyer(Lowyer law)
-       {
-           DbContext=new DbDataContext();
-           DbContext.Lowyers.InsertOnSubmit(law);
-           DbContext.SubmitChanges();
-           
-           return true;
-       }
+        public bool NewLawyer(Lowyer law)
+        {
+            DbContext = new DbDataContext();
+            DbContext.Lowyers.InsertOnSubmit(law);
+            DbContext.SubmitChanges();
 
-       public bool EditLawyer(Lowyer law,int lawId)
-       {
-           law.Id = lawId;
-           var q = CompiledQuery.Compile((DbDataContext dx, int i) => dx.Lowyers.Single(p => p.Id == i));
-           var lawyer = q(DbContext, lawId);
-           lawyer.LowyerName = law.LowyerName;
-           lawyer.Address = law.Address;
-           lawyer.Account = law.Account;
-           lawyer.Mobile = law.Mobile;
-           lawyer.Phone = law.Phone;
-           lawyer.AccountId = law.AccountId;
-           lawyer.FollowUpIssues = law.FollowUpIssues;
-           lawyer.Description = law.Description;
-           lawyer.Status = law.Status;
+            return true;
+        }
 
-           DbContext.SubmitChanges();
-           
-           return true;
-       }
+        public bool EditLawyer(Lowyer law, int lawId)
+        {
+            law.Id = lawId;
+            var q = CompiledQuery.Compile((DbDataContext dx, int i) => dx.Lowyers.Single(p => p.Id == i));
+            var lawyer = q(DbContext, lawId);
+            lawyer.LowyerName = law.LowyerName;
+            lawyer.Address = law.Address;
+            lawyer.Account = law.Account;
+            lawyer.Mobile = law.Mobile;
+            lawyer.Phone = law.Phone;
+            lawyer.AccountId = law.AccountId;
+            lawyer.FollowUpIssues = law.FollowUpIssues;
+            lawyer.Description = law.Description;
+            lawyer.Status = law.Status;
+
+            DbContext.SubmitChanges();
+
+            return true;
+        }
+
+        public List<Lowyer> AlLowyers()
+        {
+            try
+            {
+                var q = CompiledQuery.Compile((DbDataContext x) => x.Lowyers);
+
+                var lowyers = q(DbContext).ToList();
+                return lowyers;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<Lowyer> LowyerList_ByName(string name)
+        {
+            try
+            {
+                var q = CompiledQuery.Compile((DbDataContext dbx, string n) =>
+                    dbx.Lowyers.Where(p => p.LowyerName.Contains(n))
+                    );
+                var xlowyer = q(DbContext, name).ToList();
+                return xlowyer;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public Lowyer GetLowyerByName(string name)
+        {
+            try
+            {
+                var q = CompiledQuery.Compile((DbDataContext db, string n) =>
+                  db.Lowyers.Where(p => p.LowyerName == n));
+                var xlowyer = q(DbContext, name).Single();
+                return xlowyer;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public Lowyer GetLowyerById(int x)
+        {
+            try
+            {
+                var q = CompiledQuery.Compile((DbDataContext db, int i) =>
+                    db.Lowyers.Where(p => p.Id == i));
+                var xlowyer = q(DbContext, x).Single();
+                return xlowyer;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public bool DeleteLowyer(Lowyer low, int x)
+        {
+            var q = CompiledQuery.Compile((DbDataContext db, int i) =>
+                db.Lowyers.Where(p => p.Id == i));
+            var Dlowyer = q(DbContext, x).Single();
+            DbContext.Lowyers.DeleteOnSubmit(Dlowyer);
+            DbContext.SubmitChanges();
+            return true;
+        }
     }
 }
