@@ -38,7 +38,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             return true;
         }
 
-        public List<Lowyer> AlLowyers()
+        public List<Lowyer> AllLowyers()
         {
             try
             {

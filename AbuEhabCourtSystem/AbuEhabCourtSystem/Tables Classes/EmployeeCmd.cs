@@ -7,6 +7,9 @@ using System.Text;
 
 namespace AbuEhabCourtSystem.Tables_Classes
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class EmployeeCmd : DataBase
     {
         public bool NewEmployee(Employee employee)

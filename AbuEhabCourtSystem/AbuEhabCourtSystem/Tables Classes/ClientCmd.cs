@@ -7,6 +7,10 @@ using System.Text;
 
 namespace AbuEhabCourtSystem.Tables_Classes
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class ClientCmd:DataBase
     {
         public bool NewClient(Client client)

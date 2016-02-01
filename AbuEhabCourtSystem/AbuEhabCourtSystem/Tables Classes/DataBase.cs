@@ -8,5 +8,6 @@ namespace AbuEhabCourtSystem.Tables_Classes
     public  abstract class DataBase
     {
         public static DbDataContext DbContext = new DbDataContext();
+       //
     }
 }
