@@ -25,14 +25,10 @@ namespace AbuEhabCourtSystem.Tables_Classes
             var newclient = q(DbContext, x).Single();
             newclient.Id = cli.Id;
             newclient.ClientName = cli.ClientName;
-            newclient.Account = cli.Account;
-            newclient.AccountId = cli.AccountId;
+            newclient.Account = cli.Account;           
             newclient.Address = cli.Address;
-            newclient.Client1 = cli.Client1;
-            newclient.Client2 = cli.Client2;
             newclient.Described = cli.Described;
-            newclient.Email = cli.Email;
-            newclient.FollowUpIssues = cli.FollowUpIssues;
+            newclient.Email = cli.Email;           
             newclient.IdNumber = cli.IdNumber;
             newclient.Phone = cli.Phone;
             
