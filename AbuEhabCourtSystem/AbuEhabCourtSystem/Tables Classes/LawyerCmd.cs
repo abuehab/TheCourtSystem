@@ -13,6 +13,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
            DbContext=new DbDataContext();
            DbContext.Lowyers.InsertOnSubmit(law);
            DbContext.SubmitChanges();
+           
            return true;
        }
 
@@ -32,7 +33,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
            lawyer.Status = law.Status;
 
            DbContext.SubmitChanges();
-
+           
            return true;
        }
     }
