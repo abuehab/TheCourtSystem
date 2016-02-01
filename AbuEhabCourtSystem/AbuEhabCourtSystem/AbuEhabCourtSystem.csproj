@@ -118,6 +118,10 @@
     <Compile Include="Reports\Reports Tables Items\Employee_Table_Items.cs" />
     <Compile Include="Reports\Reports Tables Items\Lowyer_Table_Items.cs" />
     <Compile Include="Reports\ReportsDisplyer.cs" />
+    <Compile Include="Tables Classes\ClientCmd.cs" />
+    <Compile Include="Tables Classes\DataBase.cs" />
+    <Compile Include="Tables Classes\EmployeeCmd.cs" />
+    <Compile Include="Tables Classes\LawyerCmd.cs" />
     <EmbeddedResource Include="Reports\FrmViewer.resx">
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </EmbeddedResource>
