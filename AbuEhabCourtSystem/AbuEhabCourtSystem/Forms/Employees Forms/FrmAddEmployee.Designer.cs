@@ -36,20 +36,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtIdCard = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtAccountId = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CmbStatus = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,16 +136,6 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "الــحالـة";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(362, 267);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 17);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "رقــم الـحـسـاب";
-            // 
             // txtEmployeeName
             // 
             this.txtEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -202,24 +190,6 @@
             this.txtSalary.Size = new System.Drawing.Size(303, 25);
             this.txtSalary.TabIndex = 7;
             // 
-            // txtStatus
-            // 
-            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtStatus.Location = new System.Drawing.Point(50, 234);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(303, 25);
-            this.txtStatus.TabIndex = 8;
-            // 
-            // txtAccountId
-            // 
-            this.txtAccountId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAccountId.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtAccountId.Location = new System.Drawing.Point(50, 265);
-            this.txtAccountId.Name = "txtAccountId";
-            this.txtAccountId.Size = new System.Drawing.Size(303, 25);
-            this.txtAccountId.TabIndex = 9;
-            // 
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -247,6 +217,7 @@
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "جـديـد";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
@@ -256,24 +227,23 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "حــفـظ";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.CmbStatus);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtAccountId);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtStatus);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtSalary);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtMobile);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtPhone);
             this.panel1.Controls.Add(this.txtEmployeeName);
             this.panel1.Controls.Add(this.txtIdCard);
@@ -282,6 +252,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(489, 315);
             this.panel1.TabIndex = 42;
+            // 
+            // CmbStatus
+            // 
+            this.CmbStatus.AutoCompleteCustomSource.AddRange(new string[] {
+            "أعزب",
+            "متزوج",
+            "مطلق",
+            "أرمل"});
+            this.CmbStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbStatus.FormattingEnabled = true;
+            this.CmbStatus.Location = new System.Drawing.Point(152, 237);
+            this.CmbStatus.Name = "CmbStatus";
+            this.CmbStatus.Size = new System.Drawing.Size(121, 21);
+            this.CmbStatus.TabIndex = 40;
             // 
             // FrmAddEmployee
             // 
@@ -314,19 +299,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmployeeName;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtIdCard;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtMobile;
         private System.Windows.Forms.TextBox txtSalary;
-        private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox txtAccountId;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox CmbStatus;
     }
 }
