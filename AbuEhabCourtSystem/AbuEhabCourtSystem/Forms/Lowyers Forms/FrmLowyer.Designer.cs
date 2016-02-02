@@ -1,6 +1,6 @@
-﻿namespace AbuEhabCourtSystem.Forms.Employees_Forms
+﻿namespace AbuEhabCourtSystem.Forms.Lowyers_Forms
 {
-    partial class FrmEmployees
+    partial class FrmLowyer
     {
         /// <summary>
         /// Required designer variable.
@@ -36,12 +36,10 @@
             this.Dgv = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -64,8 +62,8 @@
             // btnAdd
             // 
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 20);
-            this.btnAdd.Text = "إضــافة مــوظـف";
+            this.btnAdd.Size = new System.Drawing.Size(92, 20);
+            this.btnAdd.Text = "إضــافة محـامـي";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdata
@@ -93,7 +91,7 @@
             this.label6.Padding = new System.Windows.Forms.Padding(10);
             this.label6.Size = new System.Drawing.Size(912, 38);
             this.label6.TabIndex = 20;
-            this.label6.Text = "بيــانات المــوظـفيـن";
+            this.label6.Text = "بيــانات الــمحـاميــن";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Dgv
@@ -106,12 +104,10 @@
             this.Dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.Column8,
             this.Column4,
             this.Column5,
-            this.Column6,
-            this.Column7,
+            this.Column3,
+            this.Column8,
             this.Column9,
             this.Column10,
             this.Column11});
@@ -137,18 +133,6 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "العنوان";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "رقم الهوية";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
             // Column4
             // 
             this.Column4.HeaderText = "التلفون";
@@ -161,17 +145,17 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // Column6
+            // Column3
             // 
-            this.Column6.HeaderText = "البريد";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.Column3.HeaderText = "العنوان";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // Column7
+            // Column8
             // 
-            this.Column7.HeaderText = "الراتب";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.Column8.HeaderText = "الــوصف";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // Column9
             // 
@@ -197,7 +181,7 @@
             this.Column11.Text = "عرض";
             this.Column11.UseColumnTextForButtonValue = true;
             // 
-            // FrmEmployees
+            // FrmLowyer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,11 +191,11 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FrmEmployees";
+            this.Name = "FrmLowyer";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "بيــانات المــوظـفيـن";
+            this.Text = "بيــانات الــمحـاميــن";
             this.Load += new System.EventHandler(this.FrmEmployees_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -231,12 +215,10 @@
         private System.Windows.Forms.DataGridView Dgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewButtonColumn Column9;
         private System.Windows.Forms.DataGridViewButtonColumn Column10;
         private System.Windows.Forms.DataGridViewButtonColumn Column11;

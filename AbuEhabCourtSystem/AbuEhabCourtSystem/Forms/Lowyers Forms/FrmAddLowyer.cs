@@ -41,18 +41,21 @@ namespace AbuEhabCourtSystem.Forms.Lowyers_Forms
             if (low != null) { MessageBox.Show(" موجود بالفعل "); ClearValues(); txtLowyerName.Focus(); return; }
             #endregion
             #region "            Save New Lowyer                         "
-            // Complete code : كمل الحقول
+      
             Lowyer lowyer = new Lowyer() 
             {
                 LowyerName = txtLowyerName.Text,
-                Address = txtAddress.Text, Mobile=txtMobile.Text,Phone=txtPhone.Text,
-                Status = CmbStatus.Text, Description = txtDescription.Text
+                Address = txtAddress.Text, 
+                Mobile=txtMobile.Text,
+                Phone=txtPhone.Text,
+                Status = "Active",
+                Description = txtDescription.Text
             };
 
-
             cmd.NewLawyer(lowyer);
-            #endregion 
-    
+            MessageBox.Show("تــم الـحـفظ");
+
+            #endregion    
         }
 
         void ClearValues()

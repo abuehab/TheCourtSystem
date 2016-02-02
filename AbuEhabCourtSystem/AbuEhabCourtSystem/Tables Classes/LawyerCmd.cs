@@ -57,6 +57,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
        /// This Mehtod Loading All Lowyers
        /// </summary>
        /// <returns> Return List  oF lowyers</returns>
+        
         public List<Lowyer> AllLowyers()
         {
             try

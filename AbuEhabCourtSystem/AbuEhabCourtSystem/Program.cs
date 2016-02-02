@@ -16,7 +16,7 @@ namespace AbuEhabCourtSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmEmployees());
+            Application.Run(new Forms.Lowyers_Forms.FrmLowyer());
         }
     }
 }

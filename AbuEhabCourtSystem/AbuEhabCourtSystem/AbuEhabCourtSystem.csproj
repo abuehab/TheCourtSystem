@@ -107,6 +107,24 @@
     <Compile Include="Forms\Lowyers Forms\FrmAddLowyer.Designer.cs">
       <DependentUpon>FrmAddLowyer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmEditLowyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmEditLowyer.Designer.cs">
+      <DependentUpon>FrmEditLowyer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmLowyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmLowyer.Designer.cs">
+      <DependentUpon>FrmLowyer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmViewLowyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lowyers Forms\FrmViewLowyer.Designer.cs">
+      <DependentUpon>FrmViewLowyer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,8 +152,20 @@
     <EmbeddedResource Include="Forms\Employees Forms\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees Forms\FrmEmployees.resx">
+      <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Lowyers Forms\FrmAddLowyer.resx">
       <DependentUpon>FrmAddLowyer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lowyers Forms\FrmEditLowyer.resx">
+      <DependentUpon>FrmEditLowyer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lowyers Forms\FrmLowyer.resx">
+      <DependentUpon>FrmLowyer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lowyers Forms\FrmViewLowyer.resx">
+      <DependentUpon>FrmViewLowyer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\FrmViewer.resx">
       <DependentUpon>FrmViewer.cs</DependentUpon>

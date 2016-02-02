@@ -55,7 +55,7 @@ namespace AbuEhabCourtSystem.Forms.Employees_Forms
 
 
                    cmd.EditEmployee(TargetEmployee, TargetEmployee.Id);
-                   this.Hide();
+                   this.Close();
                 #endregion
             }
         }
