@@ -35,16 +35,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtIdCard = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtAccountId = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnUpdtate = new System.Windows.Forms.Button();
@@ -127,32 +123,13 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "الــراتب";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(362, 237);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 17);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "الــحالـة";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(362, 267);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 17);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "رقــم الـحـسـاب";
-            // 
             // txtEmployeeName
             // 
             this.txtEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmployeeName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtEmployeeName.Location = new System.Drawing.Point(50, 17);
             this.txtEmployeeName.Name = "txtEmployeeName";
+            this.txtEmployeeName.ReadOnly = true;
             this.txtEmployeeName.Size = new System.Drawing.Size(303, 25);
             this.txtEmployeeName.TabIndex = 1;
             // 
@@ -201,24 +178,6 @@
             this.txtSalary.Size = new System.Drawing.Size(303, 25);
             this.txtSalary.TabIndex = 7;
             // 
-            // txtStatus
-            // 
-            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtStatus.Location = new System.Drawing.Point(50, 234);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(303, 25);
-            this.txtStatus.TabIndex = 8;
-            // 
-            // txtAccountId
-            // 
-            this.txtAccountId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAccountId.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtAccountId.Location = new System.Drawing.Point(50, 265);
-            this.txtAccountId.Name = "txtAccountId";
-            this.txtAccountId.Size = new System.Drawing.Size(303, 25);
-            this.txtAccountId.TabIndex = 9;
-            // 
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -240,12 +199,13 @@
             // 
             // btnUpdtate
             // 
-            this.btnUpdtate.Location = new System.Drawing.Point(379, 371);
+            this.btnUpdtate.Location = new System.Drawing.Point(438, 301);
             this.btnUpdtate.Name = "btnUpdtate";
-            this.btnUpdtate.Size = new System.Drawing.Size(126, 38);
+            this.btnUpdtate.Size = new System.Drawing.Size(67, 38);
             this.btnUpdtate.TabIndex = 1;
             this.btnUpdtate.Text = "تــعـديـل";
             this.btnUpdtate.UseVisualStyleBackColor = true;
+            this.btnUpdtate.Click += new System.EventHandler(this.btnUpdtate_Click);
             // 
             // panel1
             // 
@@ -256,21 +216,17 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtAccountId);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtStatus);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtSalary);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtMobile);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtPhone);
             this.panel1.Controls.Add(this.txtEmployeeName);
             this.panel1.Controls.Add(this.txtIdCard);
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Location = new System.Drawing.Point(16, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(489, 315);
+            this.panel1.Size = new System.Drawing.Size(489, 245);
             this.panel1.TabIndex = 42;
             // 
             // FrmEditEmployee
@@ -278,7 +234,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(526, 415);
+            this.ClientSize = new System.Drawing.Size(526, 352);
             this.Controls.Add(this.btnUpdtate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
@@ -287,6 +243,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تـعـديـل مــوظـف";
+            this.Load += new System.EventHandler(this.FrmEditEmployee_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -302,16 +259,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmployeeName;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtIdCard;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtMobile;
         private System.Windows.Forms.TextBox txtSalary;
-        private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox txtAccountId;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnUpdtate;

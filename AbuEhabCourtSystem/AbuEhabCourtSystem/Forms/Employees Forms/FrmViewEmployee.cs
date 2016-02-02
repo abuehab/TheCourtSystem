@@ -15,5 +15,22 @@ namespace AbuEhabCourtSystem.Forms.Employees_Forms
         {
             InitializeComponent();
         }
+        public Employee TargetEmployee { get; set; }
+        void LoadEmployeeData()
+        {
+            txtEmployeeName.Text = TargetEmployee.EmployeeName;
+            txtAddress.Text = TargetEmployee.Address;
+            txtEmail.Text = TargetEmployee.Email;
+            txtIdCard.Text = TargetEmployee.IdCard;
+            txtPhone.Text = TargetEmployee.Phone;
+            txtMobile.Text = TargetEmployee.Mobile;
+            txtSalary.Text = TargetEmployee.Salary.ToString();
+
+
+        }
+        private void FrmViewEmployee_Load(object sender, EventArgs e)
+        {
+            LoadEmployeeData();
+        }
     }
 }

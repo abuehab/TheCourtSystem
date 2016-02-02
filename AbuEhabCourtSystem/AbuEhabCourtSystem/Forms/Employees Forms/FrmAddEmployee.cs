@@ -20,10 +20,7 @@ namespace AbuEhabCourtSystem.Forms.Employees_Forms
         EmployeeCmd cmd = new EmployeeCmd();
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //    عايز اخليك تشوف اهمية الكومنت اللى انا عملتها قبل شويه الان  في الكود فاهم  
-            // نعم 
-
-
+     
             #region " Check  All Values First "
             // Your Code Here 
             if (txtEmployeeName.Text == string.Empty)
@@ -37,23 +34,31 @@ namespace AbuEhabCourtSystem.Forms.Employees_Forms
             Employee emp = cmd.GetEmployeeByName(txtEmployeeName.Text);
             if (emp != null) { MessageBox.Show(" موجود بالفعل "); ClearValues(); txtEmployeeName.Focus(); return; }
             #endregion
+
+            if (txtSalary.Text == string.Empty) { txtSalary.Text = "0"; }
+
+
             #region "            Save New Employee                         "
-            // Complete code : كمل الحقول
+        
             Employee employee = new Employee() 
             { 
-            
-             EmployeeName=txtEmployeeName.Text,IdCard=txtIdCard.Text,Phone=txtPhone.Text,Mobile=txtMobile.Text,
-     Address=txtAddress.Text,Email=txtEmail.Text, 
-     
-     
-     Salary= Convert.ToDouble( txtSalary.Text),Status=CmbStatus.Text
-   
-            };
+             EmployeeName = txtEmployeeName.Text,
+             IdCard = txtIdCard.Text,
+             Phone = txtPhone.Text,
+             Mobile = txtMobile.Text,
+             Address = txtAddress.Text,
+             Email = txtEmail.Text,
+             Salary = Convert.ToDouble(txtSalary.Text),
+             Status = "Active"
 
-            
+            };
+            cmd = new EmployeeCmd();
             cmd.NewEmployee(employee);
+
+
             #endregion 
-    
+            MessageBox.Show("تم الحفظ");
+
         }
 
         void ClearValues()
@@ -65,6 +70,11 @@ namespace AbuEhabCourtSystem.Forms.Employees_Forms
         {
             ClearValues();
             txtEmployeeName.Focus();
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSalary.Text == string.Empty) { txtSalary.Text = "0"; }
         }
     }
 }
