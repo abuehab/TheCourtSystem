@@ -34,8 +34,8 @@ namespace AbuEhabCourtSystem.Tables_Classes
             newEmp.Email = emp.Email;
             newEmp.Mobile = emp.Mobile;
             newEmp.Salary = emp.Salary;
-            newEmp.Status = emp.Status;
-          
+            //
+          //  الكود فيه خلل انت كاتبه  لحظة ياراجل الخلل مش في الاي دي 
             DbContext.SubmitChanges();
 
             return true;
