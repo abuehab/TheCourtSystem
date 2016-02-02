@@ -27,7 +27,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             var q = CompiledQuery.Compile((DbDataContext db, int i) =>
                 db.Clients.Where(p => p.Id == i));
             var newclient = q(DbContext, x).Single();
-            newclient.Id = cli.Id;
+          //  newclient.Id = cli.Id;  مين قال لك انه لازم نعدل حثلل المفتاح الاساسي
             newclient.ClientName = cli.ClientName;
             newclient.Account = cli.Account;           
             newclient.Address = cli.Address;
@@ -35,7 +35,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             newclient.Email = cli.Email;           
             newclient.IdNumber = cli.IdNumber;
             newclient.Phone = cli.Phone;
-            
+            DbContext.SubmitChanges();  //  كيف بتنسى تحفظ 
             return true;
         }
     }

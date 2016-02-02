@@ -50,15 +50,19 @@ namespace AbuEhabCourtSystem.Tables_Classes
             lawyer.Status = law.Status;
 
             DbContext.SubmitChanges();
-
+            //
             return true;
         }
-
+       /// <summary>
+       /// This Mehtod Loading All Lowyers
+       /// </summary>
+       /// <returns> Return List  oF lowyers</returns>
         public List<Lowyer> AllLowyers()
         {
             try
             {
-                var q = CompiledQuery.Compile((DbDataContext x) => x.Lowyers);
+                var q = CompiledQuery.Compile((DbDataContext x) => x.Lowyers
+                    .Where( c=>  c.Status =="Active"));
 
                 var lowyers = q(DbContext).ToList();
                 return lowyers;
@@ -75,7 +79,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             try
             {
                 var q = CompiledQuery.Compile((DbDataContext dbx, string n) =>
-                    dbx.Lowyers.Where(p => p.LowyerName.Contains(n))
+                    dbx.Lowyers.Where(p => p.LowyerName.Contains(n) &&   p.Status =="Active")
                     );
                 var xlowyer = q(DbContext, name).ToList();
                 return xlowyer;
@@ -91,7 +95,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             try
             {
                 var q = CompiledQuery.Compile((DbDataContext db, string n) =>
-                  db.Lowyers.Where(p => p.LowyerName == n));
+                  db.Lowyers.Where(p => p.LowyerName == n &&   p.Status =="Active"));
                 var xlowyer = q(DbContext, name).Single();
                 return xlowyer;
             }
