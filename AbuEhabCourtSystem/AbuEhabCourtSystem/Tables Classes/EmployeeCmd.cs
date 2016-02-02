@@ -14,7 +14,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
     {
         public bool NewEmployee(Employee employee)
         {
-            DbContext = new DbDataContext();
+           
             DbContext.Employees.InsertOnSubmit(employee);
             DbContext.SubmitChanges();
 
@@ -26,7 +26,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             var q = CompiledQuery.Compile((DbDataContext db, int i) =>
                                              db.Employees.Single(d => d.Id == i));
             var newEmp = q(DbContext, xid);
-            newEmp.Id = emp.Id;
+      
             newEmp.EmployeeName = emp.EmployeeName;
             newEmp.Address = emp.Address;
             newEmp.IdCard = emp.IdCard;
@@ -35,7 +35,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             newEmp.Mobile = emp.Mobile;
             newEmp.Salary = emp.Salary;
             newEmp.Status = emp.Status;
-            newEmp.AccountId = emp.AccountId;
+          
             DbContext.SubmitChanges();
 
             return true;
@@ -44,9 +44,9 @@ namespace AbuEhabCourtSystem.Tables_Classes
         {
             try
             {
-                var q = CompiledQuery.Compile((DbDataContext db) =>
-                                                                db.Employees
-                                                               );
+                var q = CompiledQuery.Compile((DbDataContext db) => 
+                      db.Employees.Where (c=> c.Status == "Active")
+                  );
                 var employees = q(DbContext).ToList();
 
                 return employees;
@@ -69,7 +69,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             try
             {
                 var q = CompiledQuery.Compile((DbDataContext db, string n) =>
-                         db.Employees.Where(c => c.EmployeeName.Contains(n)));
+                         db.Employees.Where(c => c.EmployeeName.Contains(n) && c.Status == "Active"));
                 var employees = q(DbContext, name).ToList();
 
                 return employees;
@@ -86,7 +86,7 @@ namespace AbuEhabCourtSystem.Tables_Classes
             try
             {
                 var q = CompiledQuery.Compile((DbDataContext db, string n) =>
-                                     db.Employees.Where(c => c.EmployeeName == n)
+                                     db.Employees.Where(c => c.EmployeeName == n && c.Status == "Active")
                                      );
                 var employee = q(DbContext, name).Single();
                 return employee;
@@ -111,13 +111,13 @@ namespace AbuEhabCourtSystem.Tables_Classes
                 return null;
             }
         }
-        public bool DeleteEmployee(Employee emp, int xid)
+        public bool RemoveEmployee(Employee emp, int xid)
         {
             emp.Id = xid;
             var q = CompiledQuery.Compile((DbDataContext db, int i) =>
                      db.Employees.Single(d => d.Id == i));
             var employee = q(DbContext, xid);
-            DbContext.Employees.DeleteOnSubmit(employee);
+            employee.Status = "Disactive";
             DbContext.SubmitChanges();
             return true;
         }
