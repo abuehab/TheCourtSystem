@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 
-namespace AbuEhabCourtSystem.Tables_Classes
+namespace LowyerDatalayer.Tables_Classes
 {
     public class LawyerCmd : DataBase
     {

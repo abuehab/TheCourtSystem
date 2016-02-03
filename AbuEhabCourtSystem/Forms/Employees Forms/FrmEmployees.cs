@@ -1,4 +1,4 @@
-﻿using AbuEhabCourtSystem.Tables_Classes;
+﻿using LowyerDatalayer.Tables_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,27 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AbuEhabCourtSystem.Forms.Lowyers_Forms
+namespace AbuEhabCourtSystem.Forms.Employees_Forms
 {
-    public partial class FrmLowyer : Form
+    public partial class FrmEmployees : Form
     {
-        public FrmLowyer()
+        public FrmEmployees()
         {
             InitializeComponent();
         }
-        LawyerCmd cmd = new LawyerCmd();
+
+        EmployeeCmd cmd = new EmployeeCmd();
         void PopulateDgv()
         {
             Dgv.Rows.Clear();
 
-            var lst = cmd.AllLowyers();
+            var lst = cmd.AllEmplyees();
             this.Invoke((MethodInvoker)delegate
             {
 
                 lst.ForEach(i =>
                 {
-
-                    Dgv.Rows.Add(i.Id.ToString(), i.LowyerName,i.Phone,i.Mobile,i.Address,i.Description  );
+               
+                    Dgv.Rows.Add(i.Id.ToString() , i.EmployeeName , i.Address ,
+                        i.IdCard , i.Phone , i.Mobile , i.Email , i.Salary .ToString ()
+    
+                        );
                 });
             });
         }
@@ -41,9 +45,8 @@ namespace AbuEhabCourtSystem.Forms.Lowyers_Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmAddLowyer frm = new FrmAddLowyer();
+            FrmAddEmployee frm = new FrmAddEmployee();
             frm.ShowDialog();
-            PopulateDgv();
         }
 
         private void btnUpdata_Click(object sender, EventArgs e)
@@ -58,20 +61,19 @@ namespace AbuEhabCourtSystem.Forms.Lowyers_Forms
 
                 int col = this.Dgv.CurrentCell.ColumnIndex;
 
-                var rw = cmd.GetLowyerById(int.Parse(Dgv.CurrentRow.Cells[0].Value.ToString()));
+                var rw = cmd.GetEmployeeById(int.Parse(Dgv.CurrentRow.Cells[0].Value.ToString()));
 
-                if (col.ToString() == "6")
+                if (col.ToString() == "8")
                 {
-                    FrmEditLowyer frm = new FrmEditLowyer();
+                    FrmEditEmployee frm = new FrmEditEmployee();
 
-                    frm.TargetLowyer = rw;
+                    frm.TargetEmployee = rw;
                     frm.ShowDialog();
-                    PopulateDgv();
                 }
 
 
                 #region  "       Delete Patient : UnUsed      "
-                if (col.ToString() == "7")
+                if (col.ToString() == "9")
                 {
 
                     if (MessageBox.Show("هـــــل تريـــــد الحـــــذف بالفـــعل   ؟  ", "حــــــذف",
@@ -83,19 +85,21 @@ namespace AbuEhabCourtSystem.Forms.Lowyers_Forms
                     {
                         //====================================
                         // Set Status  = Disactive
-                        cmd.DeleteLowyer(rw, rw.Id);
-                        MessageBox.Show("حـــــذف", "تـــــم الحــــذف");
+                        cmd.RemoveEmployee(rw, rw.Id);
+                        MessageBox.Show ("حـــــذف", "تـــــم الحــــذف");
                         PopulateDgv();
                     }
                 }
 
                 #endregion
-                if (col.ToString() == "8")
+                if (col.ToString() == "10")
                 {
-                    FrmViewLowyer frm = new FrmViewLowyer();
-                    frm.TargetLowyer = rw;
+                    FrmViewEmployee frm = new FrmViewEmployee();
+                    frm.TargetEmployee = rw;
                     frm.ShowDialog();
+                
                 }
+
             }
         }
 

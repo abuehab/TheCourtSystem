@@ -47,9 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AbuEhab">
-      <HintPath>..\..\..\AbuEhab.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -66,11 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Db.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Db.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Employees Forms\FrmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,10 +137,6 @@
     <Compile Include="Reports\Reports Tables Items\Employee_Table_Items.cs" />
     <Compile Include="Reports\Reports Tables Items\Lowyer_Table_Items.cs" />
     <Compile Include="Reports\ReportsDisplyer.cs" />
-    <Compile Include="Tables Classes\ClientCmd.cs" />
-    <Compile Include="Tables Classes\DataBase.cs" />
-    <Compile Include="Tables Classes\EmployeeCmd.cs" />
-    <Compile Include="Tables Classes\LawyerCmd.cs" />
     <EmbeddedResource Include="Forms\Employees Forms\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +159,6 @@
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Db.dbml.layout">
-      <DependentUpon>Db.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,11 +171,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Db.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Db.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -200,15 +180,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CourtLocalData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CourtLocalData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CourtLocalData.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Accounts Forms\" />
@@ -241,6 +212,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LowyerDatalayer\LowyerDatalayer.csproj">
+      <Project>{05d87b4c-6f5b-456b-ad7e-1dd1cd218aaa}</Project>
+      <Name>LowyerDatalayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

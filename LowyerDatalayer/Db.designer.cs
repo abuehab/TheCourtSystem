@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AbuEhabCourtSystem
+namespace LowyerDatalayer
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -22,7 +22,7 @@ namespace AbuEhabCourtSystem
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CourtLocalData")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Court")]
 	public partial class DbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -84,7 +84,7 @@ namespace AbuEhabCourtSystem
     #endregion
 		
 		public DbDataContext() : 
-				base(global::AbuEhabCourtSystem.Properties.Settings.Default.CourtLocalDataConnectionString, mappingSource)
+				base(global::LowyerDatalayer.Properties.Settings.Default.CourtConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

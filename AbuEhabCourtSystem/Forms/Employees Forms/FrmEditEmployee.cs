@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using AbuEhabCourtSystem.Tables_Classes;
+using LowyerDatalayer.Tables_Classes;
+using LowyerDatalayer;
 namespace AbuEhabCourtSystem.Forms.Employees_Forms
 {
     public partial class FrmEditEmployee : Form

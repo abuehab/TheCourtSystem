@@ -5,7 +5,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 
-namespace AbuEhabCourtSystem.Tables_Classes
+namespace LowyerDatalayer.Tables_Classes
 {
 
     /// <summary>
