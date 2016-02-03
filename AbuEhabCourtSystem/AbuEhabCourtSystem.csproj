@@ -105,12 +105,6 @@
     <Compile Include="Forms\Lowyers Forms\FrmEditLowyer.Designer.cs">
       <DependentUpon>FrmEditLowyer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Lowyers Forms\FrmLowyer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Lowyers Forms\FrmLowyer.Designer.cs">
-      <DependentUpon>FrmLowyer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Lowyers Forms\FrmViewLowyer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Lowyers Forms\FrmEditLowyer.resx">
       <DependentUpon>FrmEditLowyer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Lowyers Forms\FrmLowyer.resx">
-      <DependentUpon>FrmLowyer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Lowyers Forms\FrmViewLowyer.resx">
       <DependentUpon>FrmViewLowyer.cs</DependentUpon>

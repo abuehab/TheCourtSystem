@@ -34,8 +34,7 @@ namespace LowyerDatalayer.Tables_Classes
             newEmp.Email = emp.Email;
             newEmp.Mobile = emp.Mobile;
             newEmp.Salary = emp.Salary;
-            //
-          //  الكود فيه خلل انت كاتبه  لحظة ياراجل الخلل مش في الاي دي 
+      
             DbContext.SubmitChanges();
 
             return true;
